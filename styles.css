@@ -92,7 +92,8 @@ a {
 
 .brand,
 .nav-links,
-.hero-actions {
+.hero-actions,
+.contract-card {
   display: flex;
   align-items: center;
 }
@@ -115,7 +116,8 @@ a {
 
 .nav-links a,
 .primary-action,
-.secondary-action {
+.secondary-action,
+.contract-card button {
   display: inline-flex;
   min-height: 44px;
   align-items: center;
@@ -139,7 +141,8 @@ a {
 
 .nav-links a:hover,
 .primary-action:hover,
-.secondary-action:hover {
+.secondary-action:hover,
+.contract-card button:hover {
   box-shadow: 4px 4px 0 var(--ink);
   transform: translate(-2px, -2px);
 }
@@ -251,6 +254,55 @@ h1 {
 
 .secondary-action {
   background: var(--yellow);
+}
+
+.contract-card {
+  width: min(100%, 560px);
+  align-items: stretch;
+  gap: 0;
+  margin-top: 18px;
+  background: var(--paper-2);
+  border: 3px solid var(--ink);
+  box-shadow: 6px 6px 0 var(--ink);
+}
+
+.contract-card span,
+.contract-card code,
+.contract-card button {
+  min-width: 0;
+  border: 0;
+}
+
+.contract-card span {
+  display: grid;
+  place-items: center;
+  padding: 0 12px;
+  color: white;
+  background: var(--green-dark);
+  font-size: 1rem;
+  line-height: 1;
+}
+
+.contract-card code {
+  display: block;
+  flex: 1;
+  padding: 12px;
+  overflow: hidden;
+  border-right: 3px solid var(--ink);
+  border-left: 3px solid var(--ink);
+  font-family: "Courier New", Courier, monospace;
+  font-size: clamp(0.8rem, 1.1vw, 0.95rem);
+  font-weight: 900;
+  line-height: 1.18;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.contract-card button {
+  min-height: auto;
+  padding: 0 14px;
+  background: var(--yellow);
+  cursor: pointer;
 }
 
 .hero-media {
@@ -742,6 +794,21 @@ h1 {
 
   .hero-lede {
     font-size: 1rem;
+  }
+
+  .contract-card {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+  }
+
+  .contract-card code {
+    border-right: 0;
+  }
+
+  .contract-card button {
+    grid-column: 1 / -1;
+    min-height: 42px;
+    border-top: 3px solid var(--ink);
   }
 
   .stats-grid {

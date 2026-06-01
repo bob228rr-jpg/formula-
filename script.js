@@ -15,3 +15,18 @@ cards.forEach((card) => {
     card.style.transform = "";
   });
 });
+
+const copyButton = document.querySelector("[data-copy-ca]");
+const contractCode = document.querySelector(".contract-card code");
+
+copyButton?.addEventListener("click", async () => {
+  if (!contractCode) return;
+
+  const originalText = copyButton.textContent;
+  await navigator.clipboard.writeText(contractCode.textContent.trim());
+  copyButton.textContent = "Copied";
+
+  window.setTimeout(() => {
+    copyButton.textContent = originalText;
+  }, 1400);
+});
