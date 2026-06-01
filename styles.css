@@ -103,6 +103,10 @@ a {
   line-height: 1;
 }
 
+.brand span {
+  white-space: nowrap;
+}
+
 .nav-links {
   flex-wrap: wrap;
   justify-content: flex-end;
@@ -199,6 +203,7 @@ h1 {
   margin-bottom: 6px;
   font-size: clamp(4rem, 10vw, 9.6rem);
   line-height: 0.78;
+  white-space: nowrap;
   text-shadow: 6px 6px 0 var(--yellow), 10px 10px 0 var(--ink);
 }
 
@@ -725,7 +730,7 @@ h1 {
   }
 
   h1 {
-    font-size: clamp(3.05rem, 15vw, 4.7rem);
+    font-size: clamp(2.9rem, 14vw, 4.35rem);
     line-height: 0.84;
     text-shadow: 3px 3px 0 var(--yellow), 5px 5px 0 var(--ink);
   }
